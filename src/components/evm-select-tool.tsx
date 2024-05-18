@@ -44,8 +44,9 @@ export function EvmSelectTool() {
     let chainConfigMap = new Map();
     chainConfigList.map((chainObject, index) => {
       chainConfigMap.set(chainObject.chainValue, chainObject);
-      if (index == 1) {
+      if (index == 0) {
         setChain(chainObject.chainValue);
+        console.log(chainObject.chainValue);
       }
     });
     setChainConfigMap(chainConfigMap);
