@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
 import { useState, useEffect } from 'react';
 import { Web3 } from 'web3';
+import queryString from "query-string";
 
 
 export function EvmSelectTool() {
@@ -41,6 +42,10 @@ export function EvmSelectTool() {
   ]
 
   useEffect(() => {
+    const parsed = queryString.parse(window.location.search);
+    console.log("parsed = "+parsed);
+    const parsedHash = queryString.parse(window.location.hash);
+    console.log("parsedHash = "+parsedHash);
     let chainConfigMap = new Map();
     chainConfigList.map((chainObject, index) => {
       chainConfigMap.set(chainObject.chainValue, chainObject);
