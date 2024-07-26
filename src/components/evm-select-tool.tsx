@@ -42,10 +42,6 @@ export function EvmSelectTool() {
   ]
 
   useEffect(() => {
-    const parsed = queryString.parse(window.location.search);
-    console.log(parsed);
-    const parsedHash = queryString.parse(window.location.hash);
-    console.log(parsedHash);
     let chainConfigMap = new Map();
     chainConfigList.map((chainObject, index) => {
       chainConfigMap.set(chainObject.chainValue, chainObject);
